@@ -1,0 +1,29 @@
+C version:
+char* reverseString(char* s) {
+    if (!*s){
+        return s;
+    }
+    char t;
+    size_t len = strlen(s) - 1;
+    size_t i;
+    size_t j = len;
+
+    for(i = 0; i < len; i++){
+	    t = s[j];
+	    s[j] = s[i];
+    	s[i] = t;
+	    j--;
+
+        if(j == (len / 2)){
+           break;
+        }
+    }
+    return s;
+}
+
+Swift version:
+class Solution {
+    func reverseString(s: String) -> String {
+        return String(s.characters.reverse())
+    }
+}
